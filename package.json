@@ -1,0 +1,18 @@
+{
+  "name": "markdown-blog-content-parser",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "repository": "https://github.com/bmshamsnahid/Markdown-Blog-Parser",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "directory-structure-json": "^1.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "author": "Shams Nahid",
+  "license": "MIT"
+}
