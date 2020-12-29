@@ -1,9 +1,19 @@
 {
   "name": "markdown-blog-content-parser",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "A Module to parse and provide endpoint for markdown folders and files.",
   "main": "index.js",
-  "repository": "https://github.com/bmshamsnahid/Markdown-Blog-Parser",
+  "repository": "https://github.com/bmshamsnahid/Markdown-Blog-Parser.git",
+  "keywords": [
+    "fetch",
+    "http",
+    "promise",
+    "request",
+    "curl",
+    "wget",
+    "xhr",
+    "whatwg"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
