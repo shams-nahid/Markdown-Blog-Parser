@@ -93,7 +93,7 @@ We can tweak the methods of the method by the following options.
 - `basePath`: Where the notes are provided. Should be a relative path. This will be a public directory. Default is `./public`.
 - `publicDirectoryPath`: Directory name, where the notes are stored. Default is `public`.
 - `routePath`: The api endpoint. Default is `tree`.
-- `port`: The port, server will be listened to. Default is `port`.
+- `port`: The port, server will be listened to. Default is `8081`.
 
 ### Example
 
