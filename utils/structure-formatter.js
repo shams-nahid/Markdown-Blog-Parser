@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+const {FILE_TYPE, FOLDER_TYPE} = require('../constants')
+
 const structureFormatter = (structure = [], parentPath = '', basePath) => 
   structure
   .filter(node => {
@@ -7,19 +9,20 @@ const structureFormatter = (structure = [], parentPath = '', basePath) =>
     const shouldIgnore = ignorePattern.test(node?.name);
     return !shouldIgnore;
   })
+  .sort((node1, node2) => node1.name > node2.name ? 1 : -1)
   .map(node => {
     const { type, name, children } = node;
     let formattedChildren = null;
     let formattedFileName = name;
 
-    if (type === 'folder') {
+    if (type === FOLDER_TYPE) {
       formattedChildren = structureFormatter(
         children,
         [parentPath, name].join('/')
       );
     }
 
-    if (type === 'file') {
+    if (type === FILE_TYPE) {
       formattedFileName = formattedFileName.replace('.md', '');
     }
 
@@ -30,7 +33,7 @@ const structureFormatter = (structure = [], parentPath = '', basePath) =>
       children: formattedChildren,
       path,
       content:
-        type === 'file'
+        type === FILE_TYPE
           ? fs.readFileSync([basePath, path].join(''), 'utf8')
           : ''
     };
