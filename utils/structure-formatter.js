@@ -8,7 +8,7 @@ const structureFormatter = (structure = [], parentPath = '', basePath) => {
   }
   return structure
   .filter(node => {
-    const ignorePattern = /^.ignore/i;
+    const ignorePattern = /^.ignore|.js$/i;
     const shouldIgnore = ignorePattern.test(node?.name);
     return !shouldIgnore;
   })

@@ -6,7 +6,7 @@ const { parseMarkdownTree } = require('./parse-markdown-tree');
 
 const runServer = ({
   basePath = './',
-  publicDirectoryPath = '',
+  publicDirectoryPath = '/',
   routePath = '/tree',
   port = 8081
 }) => {
