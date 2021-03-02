@@ -1,6 +1,6 @@
 {
   "name": "markdown-blog-content-parser",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Module to parse and provide endpoint for markdown folders and files.",
   "main": "index.js",
   "repository": "https://github.com/bmshamsnahid/Markdown-Blog-Parser.git",

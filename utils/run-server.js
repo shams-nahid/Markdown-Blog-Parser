@@ -8,7 +8,8 @@ const runServer = ({
   basePath = './',
   publicDirectoryPath = '/',
   routePath = '/tree',
-  port = 8081
+  port = 8081,
+  skip = []
 }) => {
   const app = express();
 
@@ -17,7 +18,7 @@ const runServer = ({
   app.use(morgan('combined'));
 
   app.get(routePath, (req, res) => {
-    parseMarkdownTree(basePath, result => {
+    parseMarkdownTree(basePath, skip, result => {
       return res.json(result);
     });
   });

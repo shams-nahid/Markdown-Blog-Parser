@@ -7,5 +7,6 @@ require('../index').runServer({
   basePath,
   publicDirectoryPath,
   routePath,
-  port
+  port,
+  skip: ['custom_ignore.md', 'a directory 01']
 });
