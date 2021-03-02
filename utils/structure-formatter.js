@@ -1,7 +1,13 @@
 const fs = require('fs');
 
-const structureFormatter = (structure = [], parentPath = '', basePath) => {
-  return structure.map(node => {
+const structureFormatter = (structure = [], parentPath = '', basePath) => 
+  structure
+  .filter(node => {
+    const ignorePattern = /^.ignore/i;
+    const shouldIgnore = ignorePattern.test(node?.name);
+    return !shouldIgnore;
+  })
+  .map(node => {
     const { type, name, children } = node;
     let formattedChildren = null;
     let formattedFileName = name;
@@ -29,7 +35,6 @@ const structureFormatter = (structure = [], parentPath = '', basePath) => {
           : ''
     };
   });
-};
 
 module.exports = {
   structureFormatter
