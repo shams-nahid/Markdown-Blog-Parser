@@ -11,7 +11,9 @@
     "server"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:example": "nodemon example",
+    "test": "mocha",
+    "test:watcher": "mocha --watch"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -20,5 +22,10 @@
     "morgan": "^1.10.0"
   },
   "author": "Shams Nahid",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0",
+    "nodemon": "^2.0.7"
+  }
 }
