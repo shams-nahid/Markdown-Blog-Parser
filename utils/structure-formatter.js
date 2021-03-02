@@ -2,10 +2,13 @@ const fs = require('fs');
 
 const {FILE_TYPE, FOLDER_TYPE} = require('../constants')
 
-const structureFormatter = (structure = [], parentPath = '', basePath) => 
-  structure
+const structureFormatter = (structure = [], parentPath = '', basePath) => {
+  if (!Array.isArray(structure)) {
+    return;
+  }
+  return structure
   .filter(node => {
-    const ignorePattern = /^.ignore/i;
+    const ignorePattern = /^.ignore|.js$/i;
     const shouldIgnore = ignorePattern.test(node?.name);
     return !shouldIgnore;
   })
@@ -38,6 +41,7 @@ const structureFormatter = (structure = [], parentPath = '', basePath) =>
           : ''
     };
   });
+}
 
 module.exports = {
   structureFormatter
