@@ -27,5 +27,5 @@ const runServer = ({
 };
 
 module.exports = {
-  runServer
+  runServer,
 };
